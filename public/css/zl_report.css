@@ -480,6 +480,9 @@
   top: -50px;
   right: 0px;
 }
+.pp__local__dev__page .cf_madel_close {
+  top: -35px;
+}
 /* 分类 */
 .ccf_sort_box,.ccf_user_tel_box,.ccf_anonymous_box,.ccf_sendtousu_box {
   margin-bottom: 15px;
@@ -615,6 +618,9 @@
 .ctb_text_area {
   height: 40px;
 }
+.pp__local__dev__page .ctb_text_area {
+  height: 45px;
+}
 .cbb_text_area {
   height: 45px;
 }
@@ -745,7 +751,7 @@
      top: -40px;
      right: 0px;
  }
-.pp__local__dev__page .cf_madel_close {
+ .pp__local__dev__page .cf_madel_close {
   top: -35px;
 }
  .csb_title {

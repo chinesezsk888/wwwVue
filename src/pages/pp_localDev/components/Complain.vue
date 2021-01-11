@@ -50,7 +50,7 @@
                             <p class="error" v-if="checkError.tousuRequireed!=''">{{checkError.tousuRequireed}}</p>
                         </div>
                         <textarea type='text' class="ctb_text_area" :class="{errorbod:checkError.tousuRequireed !=''}"  name="area" placeholder="如：省市区名、城市名、政府机构名" v-model="sendmgs.tousuDesc"></textarea>
-                        <p class="desc_max_word_length"><span class="desc_word_length">{{showTsLength(sendmgs.tousuDesc,30)}}</span>/30</p>
+                        <p class="desc_max_word_length"><span class="desc_word_length">{{showTsLength(sendmgs.tousuDesc,40)}}</span>/40</p>
                     </div>
                     <!-- 标题 -->
                     <div class="ccf_biaoti_box">
@@ -59,7 +59,7 @@
                             <p>标题</p>
                             <p class="error" v-if="checkError.titleRequireed">{{checkError.titleRequireed}}</p>
                         </div>
-                        <textarea type='text' class="cbb_text_area" :class="{errorbod:checkError.titleRequireed!=''}" name="title" placeholder="请输入标题，不超过40字请输入标题" v-model="sendmgs.titleDesc"></textarea>
+                        <textarea type='text' class="cbb_text_area" :class="{errorbod:checkError.titleRequireed!=''}" name="title" placeholder="请输入标题，不超过40字" v-model="sendmgs.titleDesc"></textarea>
                         <p class="desc_max_word_length"><span class="desc_word_length">{{showTitleLength(sendmgs.titleDesc,40)}}</span>/40</p>
                     </div>
                     <!-- 详细说明 -->
@@ -225,7 +225,7 @@ export default {
       }
     },
     placeholderWarp () {
-      var placeholder = '1.如：事情经过、咨询内容、投诉诉求、具体建议等。2.请如实、客观、冷静填写，不用过多的修辞，不宣泄。3.如内容违法将由留言者承担法律责任。不宣泄。'
+      var placeholder = '1.如：事情经过、咨询内容、投诉诉求、具体建议等。2.请如实、客观、冷静填写，不用过多的修辞，不宣泄。3.如内容违法将由留言者承担法律责任。'
       var textarea = document.getElementsByClassName('ceb_text_area')[0]
       textarea.setAttribute('placeholder', placeholder)
       textarea.onfocus = function () {
@@ -322,7 +322,7 @@ export default {
       }
       if (this.sendmgs.userTel === '') {
         this.checkError.telError = '必填'
-      } else if (!(/^1[3-8]\d{9}$/.test(this.sendmgs.userTel))) {
+      } else if (!(/^1[3-9]\d{9}$/.test(this.sendmgs.userTel))) {
         this.checkError.telError = '请输入正确的手机号'
       } else {
         this.checkError.telError = false
@@ -352,7 +352,7 @@ export default {
     },
     // 发送请求
     sendAxios (formmgs) {
-      var url = '/wap/userSuggestionsSubmit.msp'
+      var url = '/www/userSuggestionsSubmit.msp'
       // successwaiting.show();
       this.loading = true
       // this.isshow = false;

@@ -1,9 +1,9 @@
 <template>
     <div class="intro_content" ref="desc">
       <!-- 非挂载部分 -->
-      <span ref="unremound" :class="{show__up:unremoundShowUp}" class="merchant_desc" @click="showUnremoundAllMdesc()">{{ description }}</span>
+      <span ref="unremound" :class="{show__up:unremoundShowUp}" class="merchant_desc" @click="showUnremoundAllMdesc()" v-html="description"></span>
       <!-- 挂载部分 -->
-      <span ref="remound" :class="{show__up:remoundShowUp}" class="merchant_desc hhh" @click="showRemoundAllMdesc()">{{ response }}</span>
+      <span ref="remound" :class="{show__up:remoundShowUp}" class="merchant_desc hhh" @click="showRemoundAllMdesc()" v-html="response">{{ response }}</span>
       <!-- 非挂载部分 -->
       <div :class="{warp_shouqi:exUnremoundButton===false}" class="unfold" @click="showUnremoundAllMdesc()" v-if="showUnremoundButton">
         {{exUnremoundButton ? '...展开' : '...收起'}}

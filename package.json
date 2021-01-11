@@ -39,7 +39,7 @@
     ],
     "rules": {
       "no-console": "off",
-      "no-extra-bind": 0,
+      "no-extra-bind":0,
       "eqeqeq": 0
     },
     "parserOptions": {

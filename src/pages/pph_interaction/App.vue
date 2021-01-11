@@ -107,6 +107,9 @@ export default {
           url += '?uid=' + this.userId
         }
       }
+      if (window.bsParams) {
+        url = url + window.bsParams()
+      }
       this.axios.get(url)
         .then(res => {
           this.addData(res)
